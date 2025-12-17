@@ -1,7 +1,11 @@
 
 import { useEffect, useState } from 'react';
 import './App.css'
-import NewUserForm from './components/NewUserForm'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UserPage from './pages/UserPage';
+import TripPage from './pages/TripPage';
+import HomePage from './pages/HomePage';
+
 
 function App() {
 
@@ -200,12 +204,20 @@ function App() {
 
   return (
     <>
-      <NewUserForm viaggi={viaggiUniti} setTrips={setTrips} />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/userForm' element={<UserPage viaggiUniti={viaggiUniti} setTrips={setTrips} />} />
+          <Route path='/tripPage' element={<TripPage viaggiUniti={viaggiUniti} setTrips={setTrips} />} />
+        </Routes>
+      </BrowserRouter>
 
       {trips.map(viaggio => {
         return (
           <div key={viaggio.id}>
-            <span>{viaggio.destinazione}</span>
+            <span>{viaggio.destinazione}___</span>
+            <span>Inizio:{viaggio.dataInizio}___</span>
+            <span>Fine:{viaggio.dataFine}</span>
             <ul>
               {viaggio.viaggiatori.map(viaggiatore => {
                 return (
