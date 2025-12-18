@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import UserPage from './pages/UserPage';
-import TripPage from './pages/TripPage';
+import NewUserAndTripPage from './pages/NewUserAndTripPage';
 import HomePage from './pages/HomePage';
 
 
@@ -207,8 +206,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/userForm' element={<UserPage viaggiUniti={viaggiUniti} setTrips={setTrips} />} />
-          <Route path='/tripPage' element={<TripPage viaggiUniti={viaggiUniti} setTrips={setTrips} />} />
+          <Route path='/Form' element={<NewUserAndTripPage viaggiUniti={viaggiUniti} setTrips={setTrips} />} />
         </Routes>
       </BrowserRouter>
 
