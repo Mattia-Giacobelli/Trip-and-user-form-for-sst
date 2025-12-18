@@ -37,6 +37,7 @@ export default function NewUserForm({ viaggi, setTrips }) {
 
     return (
         <>
+            <h3>Aggiungi un nuovo viaggiatore</h3>
             <form onSubmit={handleFormSubmit}>
                 <div className="mb-3">
                     <label htmlFor="nome" className="form-label">Nome</label>

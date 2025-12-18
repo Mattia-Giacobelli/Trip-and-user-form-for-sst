@@ -34,6 +34,7 @@ export default function NewTripForm({ viaggi, setTrips }) {
 
     return (
         <>
+            <h3>Aggiungi un nuovo viaggio</h3>
             <form onSubmit={handleFormSubmit}>
                 <div className="mb-3">
                     <label htmlFor="destinazione" className="form-label">Destinazione</label>
